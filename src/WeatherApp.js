@@ -10,8 +10,9 @@ export default function WeatherApp() {
   let [message4, setMessage4] = useState("");
 
   function showTemperature(response) {
+    console.log(response);
     setMessage1(`Temperature: ${Math.round(response.data.main.temp)}°C `);
-    setMessage2(`Description: ${response.data.weather.description}`);
+    setMessage2(`Description: ${response.data.weather[0].description}`);
     setMessage3(`Humidity: ${Math.round(response.data.main.humidity)}%`);
     setMessage4(`Wind: ${Math.round(response.data.wind.speed)}Km/h`);
   }
